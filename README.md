@@ -2,7 +2,7 @@
 
 An OpenCV-based wall paint & wallpaper visualizer. Select a wall in a room photo
 and preview it either recolored with a custom paint shade or overlaid with a
-wallpaper texture — built as a B.Tech mini project.
+wallpaper texture.
 
 ## Features
 
@@ -20,12 +20,11 @@ Chromalter/
 ├── select_ROI.py             # main entry point — run this
 ├── color_1.py                # color-name picker, invoked by select_ROI.py
 ├── cdataset.csv               # 865 named colors (name, hex, R, G, B)
-├── wall1.jpg ... wall7.jpg     # sample room/wall photos
+├── wall1.jpg ... wall3.jpg     # sample room/wall photos
 ├── frame1.jpg ... frame3.jpg    # sample wallpaper/texture images
 ├── colorgrid.jpg               # color swatch image used for picking a fill color
-├── colorgrid1.jpg               # alternate color swatch image
 ├── requirements.txt
-└── .gitignore
+
 ```
 
 ## Setup
@@ -92,14 +91,3 @@ RGB values overlaid on the image. Press **Esc** to quit.
 - Swap in your own room photo or wallpaper by replacing `wall3.png` /
   `frame1.jpg`, or edit the filenames at the top of `select_ROI.py`.
 
-## Known limitations
-
-- Wall and wallpaper filenames (`wall3.png`, `frame1.jpg`) are hardcoded at
-  the top of `select_ROI.py` rather than passed as arguments.
-- Color distance uses simple absolute RGB difference, not a perceptual color
-  space — nearest-name matches can be a bit off for close shades.
-- No CLI flags — image swaps require editing the script directly.
-
-## Tech stack
-
-Python, OpenCV, pandas, NumPy
